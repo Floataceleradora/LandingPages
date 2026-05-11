@@ -1,0 +1,1346 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0A0908" />
+<title>Float · Os cinco caminhos do cartão de loja</title>
+<meta name="description" content="Toda venda a prazo no balcão é uma operação de crédito acontecendo. Quem emite, quem analisa risco, quem fica com o juro — muda conforme o caminho. Esta página é sobre os caminhos." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Os cinco caminhos do cartão de loja — Float" />
+<meta property="og:description" content="O parcelado entra na sua loja. A maior parte do dinheiro sai dela. Cinco caminhos para o varejo brasileiro decidir por onde o dinheiro passa." />
+<meta property="og:image" content="og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Float Brasil" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Os cinco caminhos do cartão de loja — Float" />
+<meta name="twitter:description" content="O parcelado entra na sua loja. A maior parte do dinheiro sai dela. Cinco caminhos para o varejo brasileiro." />
+<meta name="twitter:image" content="og.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+<link rel="apple-touch-icon" sizes="192x192" href="favicon-192.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:#0A0908;
+    --bg-2:#13110F;
+    --line:#23201B;
+    --line-soft:#1A1814;
+    --ink:#F2EAD9;
+    --ink-mute:#B6AC97;
+    --ink-dim:#7F7768;
+    --gold:#F2B340;
+    --gold-deep:#C68A28;
+    --gold-soft:#3A2A0F;
+    --max:1180px;
+    --narrow:920px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Inter","Söhne",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{font-size:16px;line-height:1.55;letter-spacing:-0.005em}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+  .wrap.narrow{max-width:var(--narrow)}
+  .label{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold)}
+  .label--mute{color:var(--ink-dim)}
+  .serif{font-family:"Newsreader",Georgia,"Times New Roman",serif;font-weight:400;font-style:italic;letter-spacing:-0.01em}
+  .gold{color:var(--gold)}
+
+  /* ---------- HEADER ---------- */
+  header.top{padding:16px 0 14px;border-bottom:1px solid var(--line-soft);position:sticky;top:0;background:rgba(10,9,8,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:50}
+  header.top .row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .mark{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-family:"Inter",sans-serif;font-weight:600;font-size:15px;letter-spacing:-0.01em}
+  .mark-dot{width:8px;height:8px;border-radius:100%;background:var(--gold);display:inline-block;box-shadow:0 0 14px rgba(242,179,64,0.55)}
+  .meta{display:none;align-items:center;gap:14px;color:var(--ink-dim);font-size:11px;font-family:"JetBrains Mono",monospace;letter-spacing:0.06em;text-transform:uppercase}
+  .meta b{color:var(--ink-mute);font-weight:500}
+
+  .cta-link{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;
+    color:var(--ink);text-decoration:none;padding:7px 14px;
+    border:1px solid var(--line);border-radius:100px;background:rgba(255,255,255,0.015);
+    transition:color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    white-space:nowrap;
+  }
+  .cta-link:hover{color:var(--gold);border-color:rgba(242,179,64,0.55);background:rgba(242,179,64,0.06)}
+  .cta-link .arrow{display:inline-block;font-size:13px;line-height:1;transition:transform 0.25s ease;color:var(--gold)}
+  .cta-link:hover .arrow{transform:translateX(3px)}
+  @media (max-width: 540px){.cta-link{font-size:10px;padding:6px 11px;letter-spacing:0.04em}}
+  @media (max-width: 380px){.cta-link span:first-child{display:none}.cta-link{padding:6px 10px}.cta-link .arrow{font-size:12px}}
+
+  /* ---------- HERO ---------- */
+  section.hero{padding:48px 0 36px;border-bottom:1px solid var(--line-soft);position:relative;overflow:hidden}
+  section.hero::before{content:"";position:absolute;top:-160px;right:-160px;width:420px;height:420px;background:radial-gradient(closest-side, rgba(242,179,64,0.10), rgba(242,179,64,0));pointer-events:none}
+  .hero .eyebrow{margin-bottom:22px}
+  .hero h1{font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:32px;line-height:1.1;letter-spacing:-0.015em;margin:0 0 20px;max-width:920px}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero .lede{font-size:16.5px;line-height:1.55;color:var(--ink-mute);max-width:680px;margin:0}
+  .hero .lede strong{color:var(--ink);font-weight:500}
+
+  .outcome-cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:32px;padding-top:28px;border-top:1px solid var(--line)}
+  .oc{display:flex;gap:16px;padding:20px 18px;border:1px solid var(--line);border-radius:6px;background:linear-gradient(180deg, rgba(242,179,64,0.018), rgba(242,179,64,0));transition:background 0.3s ease, border-color 0.3s ease}
+  .oc:hover{background:linear-gradient(180deg, rgba(242,179,64,0.045), rgba(242,179,64,0));border-color:rgba(242,179,64,0.25)}
+  .oc-num{font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);display:inline-block;margin-bottom:8px}
+  .oc-hook{font-family:"Newsreader",serif;font-style:italic;font-size:16px;line-height:1.42;color:var(--ink);margin:0;font-weight:400}
+
+  /* ---------- QUICKNAV ---------- */
+  .quicknav{border-bottom:1px solid var(--line-soft);background:rgba(10,9,8,0.4);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .quicknav::-webkit-scrollbar{display:none}
+  .quicknav-row{display:flex;gap:8px;padding:14px 22px;white-space:nowrap;align-items:center}
+  .quicknav-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-dim);margin-right:10px;flex-shrink:0}
+  .quicknav a{display:inline-flex;align-items:center;gap:6px;flex-shrink:0;padding:6px 12px;border:1px solid var(--line);border-radius:100px;color:var(--ink-mute);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:-0.005em;transition:color 0.2s ease, border-color 0.2s ease, background 0.2s ease}
+  .quicknav a:hover{color:var(--gold);border-color:rgba(242,179,64,0.45);background:rgba(242,179,64,0.04)}
+  .quicknav a .qn-num{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--gold);letter-spacing:0.06em}
+
+  /* ---------- BLOCO ---------- */
+  section.bloco{padding:0;border-bottom:1px solid var(--line-soft);transition:background 0.3s ease}
+  section.bloco[data-open="true"]{background:linear-gradient(180deg, rgba(242,179,64,0.014), rgba(242,179,64,0))}
+  .bloco-header{margin-bottom:0}
+
+  /* bloco dropdown toggle */
+  .bloco-toggle{
+    display:block;width:100%;text-align:left;
+    background:transparent;border:0;color:inherit;font:inherit;
+    cursor:pointer;position:relative;
+    padding:34px 60px 30px 0;
+    transition:background 0.25s ease;
+  }
+  .bloco-toggle:hover{background:rgba(242,179,64,0.018)}
+  .bloco-toggle:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+  .bloco-toggle:active{background:rgba(242,179,64,0.03)}
+  .bloco-chevron{
+    position:absolute;top:50%;right:0;transform:translateY(-50%);
+    width:42px;height:42px;
+    border:1px solid var(--line);border-radius:100%;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);background:rgba(242,179,64,0.02);
+    transition:all 0.3s ease;
+  }
+  .bloco-chevron .plus{position:relative;width:13px;height:13px;display:block}
+  .bloco-chevron .plus::before,.bloco-chevron .plus::after{
+    content:"";position:absolute;top:50%;left:50%;background:var(--gold);
+    transition:transform 0.3s ease, opacity 0.3s ease;
+  }
+  .bloco-chevron .plus::before{width:13px;height:1.5px;transform:translate(-50%,-50%)}
+  .bloco-chevron .plus::after{width:1.5px;height:13px;transform:translate(-50%,-50%)}
+  .bloco-toggle[aria-expanded="true"] .bloco-chevron{background:rgba(242,179,64,0.14);border-color:var(--gold)}
+  .bloco-toggle[aria-expanded="true"] .bloco-chevron .plus::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+
+  .bloco-body{max-height:0;overflow:hidden;transition:max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1)}
+  .bloco-body-inner{padding-bottom:36px}
+  .bloco-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .bloco-num{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:500;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase}
+  .bloco-rule{flex:1;height:1px;background:linear-gradient(90deg, rgba(242,179,64,0.35), rgba(242,179,64,0))}
+  .bloco-title{font-family:"Newsreader",serif;font-weight:500;font-size:26px;line-height:1.12;letter-spacing:-0.012em;margin:0 0 12px;max-width:760px;color:var(--ink)}
+  .bloco-title em{font-style:italic;color:var(--gold)}
+  .bloco-lede{font-family:"Newsreader",Georgia,serif;font-style:italic;font-size:15.5px;line-height:1.5;color:var(--ink-mute);max-width:720px;margin:0}
+  .bloco-hint{display:inline-flex;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-dim);margin-top:14px;padding:5px 10px;border:1px solid var(--line);border-radius:100px;background:rgba(255,255,255,0.012)}
+  .bloco-hint .dot{width:5px;height:5px;border-radius:100%;background:var(--gold);box-shadow:0 0 8px rgba(242,179,64,0.6)}
+
+  /* ---------- ACCORDION (used everywhere) ---------- */
+  .acc{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+  .acc-item{border-bottom:1px solid var(--line);transition:background 0.25s ease}
+  .acc-item:hover{background:rgba(255,255,255,0.012)}
+  .acc-item[data-open="true"]{background:linear-gradient(180deg, rgba(242,179,64,0.025), rgba(242,179,64,0))}
+
+  .acc-head{
+    display:grid;
+    grid-template-columns:1fr 48px;
+    grid-template-rows:auto auto auto;
+    align-items:start;
+    gap:6px 14px;
+    width:100%;
+    padding:18px 16px;
+    background:transparent;border:0;text-align:left;cursor:pointer;
+    color:var(--ink);font:inherit;
+    transition:padding 0.2s ease;
+  }
+  .acc-head:active{background:rgba(255,255,255,0.02)}
+  .acc-head:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+  .acc-meta{display:flex;flex-direction:column;gap:4px;grid-column:1;grid-row:1}
+  .acc-num{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;font-weight:500}
+  .acc-aud{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:0.06em;color:var(--ink-dim);text-transform:uppercase;line-height:1.4}
+  .acc-title{font-family:"Inter",sans-serif;font-weight:600;font-size:17.5px;line-height:1.22;letter-spacing:-0.015em;margin:4px 0 0;color:var(--ink);grid-column:1;grid-row:2}
+  .acc-hook{margin:0;font-family:"Newsreader",serif;font-style:italic;font-size:14.5px;color:var(--ink-mute);line-height:1.45;grid-column:1;grid-row:3}
+
+  .acc-chevron{grid-column:2;grid-row:1/4;align-self:center;justify-self:end;width:36px;height:36px;border:1px solid var(--line);border-radius:100%;display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s ease;flex-shrink:0;background:rgba(242,179,64,0.02)}
+  .acc-chevron .plus{position:relative;width:11px;height:11px;display:block}
+  .acc-chevron .plus::before,.acc-chevron .plus::after{content:"";position:absolute;top:50%;left:50%;background:var(--gold);transition:transform 0.3s ease, opacity 0.3s ease}
+  .acc-chevron .plus::before{width:11px;height:1.5px;transform:translate(-50%,-50%)}
+  .acc-chevron .plus::after{width:1.5px;height:11px;transform:translate(-50%,-50%)}
+  .acc-head[aria-expanded="true"] .acc-chevron{background:rgba(242,179,64,0.14);border-color:var(--gold)}
+  .acc-head[aria-expanded="true"] .acc-chevron .plus::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+
+  .acc-body{max-height:0;overflow:hidden;transition:max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1)}
+  .acc-body-inner{padding:0 16px 22px}
+  .acc-body-inner p{font-size:14.5px;line-height:1.65;color:var(--ink-mute);margin:0 0 14px;max-width:760px}
+  .acc-body-inner p:last-child{margin-bottom:0}
+  .acc-body-inner p strong{color:var(--ink);font-weight:500}
+
+  /* sintomas (deep accordion only) */
+  .acc-sintomas{margin:0 0 16px;padding:12px 14px;background:rgba(255,255,255,0.018);border-left:2px solid var(--gold-deep);border-radius:0 4px 4px 0}
+  .sym-label{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:8px}
+  .sym-list{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+  .sym-item{position:relative;padding-left:18px;font-size:14px;line-height:1.5;color:var(--ink-mute);transition:opacity 0.45s ease, transform 0.45s ease;opacity:0;transform:translateX(-6px)}
+  .sym-item::before{content:"";position:absolute;left:0;top:9px;width:8px;height:1.5px;background:var(--gold)}
+  .acc-item[data-open="true"] .sym-item{opacity:1;transform:translateX(0)}
+  .acc-item[data-open="true"] .sym-item:nth-child(1){transition-delay:0.14s}
+  .acc-item[data-open="true"] .sym-item:nth-child(2){transition-delay:0.22s}
+  .acc-item[data-open="true"] .sym-item:nth-child(3){transition-delay:0.30s}
+  .acc-item[data-open="true"] .sym-item:nth-child(4){transition-delay:0.38s}
+  .acc-item[data-open="true"] .sym-item:nth-child(5){transition-delay:0.46s}
+
+  .acc-section-label{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin:16px 0 8px}
+  .acc-examples{display:grid;gap:6px;margin:0 0 14px}
+  .acc-ex{font-size:13.5px;line-height:1.5;color:var(--ink-mute);padding:8px 12px;background:rgba(255,255,255,0.022);border-radius:4px}
+  .acc-ex b{color:var(--ink);font-weight:600}
+  .acc-out{display:block;border-top:1px solid var(--line);padding-top:14px;margin-top:8px;font-family:"Newsreader",serif;font-style:italic;font-size:15px;line-height:1.45;color:var(--ink);max-width:760px}
+  .acc-out::before{content:"→  ";color:var(--gold);font-style:normal;font-family:"Inter",sans-serif;font-weight:600}
+
+  /* inadimplência tablet inside accordion */
+  .inad-table{margin-top:12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .inad-row{display:grid;grid-template-columns:1fr 100px;gap:12px;padding:12px 0;border-bottom:1px solid var(--line-soft);align-items:baseline}
+  .inad-row:last-child{border-bottom:0}
+  .inad-row.head{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-dim)}
+  .inad-name{font-size:14px;color:var(--ink)}
+  .inad-name .sub{display:block;color:var(--ink-dim);font-size:11.5px;margin-top:2px;font-family:"JetBrains Mono",monospace;letter-spacing:0.04em}
+  .inad-num{font-family:"JetBrains Mono",monospace;font-size:14.5px;color:var(--gold);text-align:right;font-weight:500}
+  .inad-row.warn .inad-num{color:#FF8B6B}
+  .inad-source{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.06em;color:var(--ink-dim);margin-top:10px;text-transform:uppercase}
+
+  /* pull quote inside accordion */
+  .pull{font-family:"Newsreader",serif;font-style:italic;font-size:16px;line-height:1.4;color:var(--ink);margin:14px 0;padding:12px 0 12px 16px;border-left:2px solid var(--gold);max-width:760px}
+
+  /* "expand all" toggle */
+  .bloco-controls{margin:0 0 20px;display:flex;gap:8px;flex-wrap:wrap}
+  .bloco-ctrl{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mute);background:transparent;border:1px solid var(--line);padding:6px 11px;border-radius:100px;cursor:pointer;transition:all 0.2s ease}
+  .bloco-ctrl:hover{color:var(--gold);border-color:rgba(242,179,64,0.45);background:rgba(242,179,64,0.04)}
+
+  /* ---------- OUTCOME INTRO + HOWTO PANEL + BLOCO PILLS ---------- */
+  .outcome-intro{margin:30px 0 0;font-family:"Newsreader",Georgia,serif;font-style:italic;font-size:15px;color:var(--ink-dim);max-width:560px;line-height:1.5;display:flex;align-items:center;gap:10px}
+  .outcome-intro svg{flex-shrink:0;color:var(--gold);opacity:0.85}
+
+  section.howto{padding:14px 0;border-bottom:1px solid var(--line-soft);background:rgba(255,255,255,0.008)}
+  .howto-strip{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .howto-strip-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.14em;color:var(--ink-dim);text-transform:uppercase;margin-right:4px}
+  .howto-chip{display:inline-flex;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.10em;color:var(--ink-mute);text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);border-radius:100px;background:rgba(255,255,255,0.012)}
+  .howto-chip svg{width:11px;height:11px;color:var(--gold);flex-shrink:0}
+
+  .bloco-meta-pills{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+  .bloco-pill{display:inline-flex;align-items:center;gap:5px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);padding:4px 9px;border:1px solid var(--line);border-radius:100px;background:rgba(255,255,255,0.012)}
+  .bloco-pill svg{width:11px;height:11px;color:var(--ink-dim)}
+  .bloco-pill--cat{color:var(--gold);border-color:rgba(242,179,64,0.3);background:rgba(242,179,64,0.04)}
+  .bloco-pill--cat svg{color:var(--gold)}
+
+  @media (min-width: 720px){
+    section.howto{padding:18px 0}
+  }
+
+  /* ---------- CLOSE ---------- */
+  section.close{padding:50px 0 42px;border-bottom:1px solid var(--line-soft);background:linear-gradient(180deg, rgba(242,179,64,0.02), rgba(242,179,64,0))}
+  .close .bloco-title{max-width:820px}
+  .contact{margin-top:28px;display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid var(--line)}
+  .contact .who{font-family:"Newsreader",serif;font-style:italic;font-size:16px;color:var(--ink-mute);max-width:680px;line-height:1.5}
+  .contact .who b{font-style:normal;font-family:"Inter",sans-serif;font-weight:500;color:var(--ink)}
+  .contact a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-deep);font-weight:500;font-size:15px;align-self:flex-start;font-family:"JetBrains Mono",monospace;letter-spacing:0.02em}
+  .contact a:hover{color:var(--ink);border-color:var(--ink)}
+
+  /* ---------- FOOTER ---------- */
+  footer.bot{padding:24px 0 36px}
+  footer.bot .row{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer.bot .legal{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--ink-dim);letter-spacing:0.08em;text-transform:uppercase}
+  footer.bot .legal a{color:var(--ink-dim);text-decoration:none}
+  footer.bot .legal a:hover{color:var(--gold)}
+
+  /* ---------- DESKTOP ---------- */
+  @media (min-width: 720px){
+    .wrap{padding:0 32px}
+    .meta{display:flex}
+    section.hero{padding:74px 0 56px}
+    .hero h1{font-size:46px;line-height:1.06}
+    .hero .lede{font-size:18px}
+    .outcome-cards{grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;padding-top:30px}
+    .oc{padding:22px 22px}
+    .oc-hook{font-size:16px}
+    .quicknav-row{padding:16px 32px;justify-content:flex-start}
+    .bloco-toggle{padding:48px 80px 42px 0}
+    .bloco-chevron{width:48px;height:48px}
+    .bloco-body-inner{padding-bottom:52px}
+    .bloco-title{font-size:30px}
+    .bloco-lede{font-size:17px}
+    .acc-head{padding:24px 26px;grid-template-columns:1fr 1.4fr 56px;grid-template-rows:auto auto;gap:6px 24px}
+    .acc-meta{grid-column:1;grid-row:1/3;justify-content:flex-start;border-right:1px solid var(--line);padding-right:22px}
+    .acc-title{grid-column:2;grid-row:1;font-size:19px;margin:0}
+    .acc-hook{grid-column:2;grid-row:2;font-size:15px}
+    .acc-chevron{grid-column:3;grid-row:1/3;align-self:center;width:44px;height:44px}
+    .acc-body-inner{padding:0 26px 30px;padding-left:calc(26px + 20%);}
+    .close .bloco-title{font-size:30px}
+    .contact{flex-direction:row;align-items:center;justify-content:space-between;gap:32px;padding-top:32px}
+    .contact a{align-self:auto;font-size:14px}
+    .inad-row{grid-template-columns:1fr 130px}
+  }
+
+  @media (min-width: 1100px){
+    .hero h1{font-size:52px;line-height:1.05}
+    .acc-head{padding:28px 32px;grid-template-columns:240px 1fr 56px}
+    .acc-title{font-size:20px}
+    .acc-body-inner{padding-left:296px}
+  }
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    body{background:#fff;color:#111}
+    header.top{position:static;background:#fff}
+    section{border-color:#ddd !important}
+    .acc-body{max-height:none !important}
+    .acc-chevron, .quicknav, .bloco-controls{display:none}
+    .sym-item{opacity:1 !important;transform:none !important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="top">
+  <div class="wrap row">
+    <a href="#top" class="mark"><span class="mark-dot" aria-hidden="true"></span>Float</a>
+    <div class="meta">
+      <span><b>Cartão de loja</b></span>
+      <span>Brasil · 2026</span>
+    </div>
+    <a class="cta-link" href="https://wa.me/5511974847778" target="_blank" rel="noopener" aria-label="Conversar com a Float pelo WhatsApp">
+      <span>Falar no WhatsApp</span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="label eyebrow">// Float · Guia · Cartão de loja no varejo brasileiro</div>
+    <h1>
+      Os cinco caminhos pra operar o cartão da rede. <em>Um guia pra entender por onde o dinheiro do parcelado passa.</em>
+    </h1>
+    <p class="lede">
+      Toda venda a prazo no balcão é uma operação de crédito acontecendo. <strong>Cinco arquiteturas diferentes</strong> podem suportar essa operação no varejo brasileiro. Esta página é um mapa de cada uma.
+    </p>
+
+    <div class="outcome-cards">
+      <article class="oc">
+        <div>
+          <span class="oc-num">Sintoma 01</span>
+          <p class="oc-hook">O parcelado entra na sua loja. A maior parte do dinheiro sai dela.</p>
+        </div>
+      </article>
+      <article class="oc">
+        <div>
+          <span class="oc-num">Sintoma 02</span>
+          <p class="oc-hook">O parcelado do seu cliente já é uma carteira. A pergunta é se ela está dentro ou fora de casa.</p>
+        </div>
+      </article>
+      <article class="oc">
+        <div>
+          <span class="oc-num">Sintoma 03</span>
+          <p class="oc-hook">Quando aperta o mês, qual conta o seu cliente paga primeiro?</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOWTO ============ -->
+<section class="howto" id="como-ler">
+  <div class="wrap">
+    <div class="howto-strip">
+      <span class="howto-strip-label">// Como ler</span>
+      <span class="howto-chip"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="8" height="2" rx="0.4"/><rect x="2" y="5" width="8" height="2" rx="0.4"/><rect x="2" y="8" width="8" height="2" rx="0.4"/></svg>5 blocos · 27 tópicos</span>
+      <span class="howto-chip"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="4.5"/><path d="M6 3.5 V6 L7.8 7.8"/></svg>~30 min se ler tudo</span>
+      <span class="howto-chip"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6 H10"/><path d="M7.5 3.5 L10 6 L7.5 8.5"/></svg>Sem ordem certa</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUICKNAV ============ -->
+<nav class="quicknav" aria-label="Navegação rápida">
+  <div class="quicknav-row">
+    <span class="quicknav-label">Blocos</span>
+    <a href="#bloco-01"><span class="qn-num">01</span> Como chegamos aqui</a>
+    <a href="#bloco-02"><span class="qn-num">02</span> Como o cliente decide</a>
+    <a href="#bloco-03"><span class="qn-num">03</span> Os cinco caminhos</a>
+    <a href="#bloco-04"><span class="qn-num">04</span> Quem já fez no Brasil</a>
+    <a href="#bloco-05"><span class="qn-num">05</span> O que olhar antes</a>
+    <a href="#contato"><span class="qn-num">→</span> Falar com a Float</a>
+  </div>
+</nav>
+
+<!-- ============ BLOCO 01 — COMO CHEGAMOS AQUI ============ -->
+<section class="bloco" id="bloco-01" data-bloco="01">
+  <div class="wrap">
+    <button class="bloco-toggle" aria-expanded="false" aria-controls="bloco-01-body">
+      <div class="bloco-header">
+        <div class="bloco-eyebrow">
+          <span class="bloco-num">Bloco 01</span>
+          <div class="bloco-rule"></div>
+        </div>
+      <div class="bloco-meta-pills">
+        <span class="bloco-pill bloco-pill--cat"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><rect x="1.5" y="2" width="9" height="8" rx="1"/><path d="M3.5 4.5 H8.5"/><path d="M3.5 6.5 H8.5"/><path d="M3.5 8.5 H6.5"/></svg>Contexto</span>
+        <span class="bloco-pill">5 tópicos</span>
+        <span class="bloco-pill"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="4.5"/><path d="M6 3.5 V6 L7.8 7.8"/></svg>~8 min</span>
+      </div>
+      <h2 class="bloco-title">Como o crédito do balcão mudou de mãos. <em>Cinco fatores que reorganizaram o varejo brasileiro entre 1994 e 2024.</em></h2>
+      <p class="bloco-lede">Os fatores macroeconômicos, regulatórios e tecnológicos que substituíram o carnê pelo cartão.</p>
+      </div>
+      <div class="bloco-chevron" aria-hidden="true"><span class="plus"></span></div>
+    </button>
+
+    <div class="bloco-body" id="bloco-01-body">
+    <div class="bloco-body-inner">
+    <div class="bloco-controls">
+      <button class="bloco-ctrl" data-action="expand" data-bloco="01">+ Abrir todos</button>
+      <button class="bloco-ctrl" data-action="collapse" data-bloco="01">− Fechar todos</button>
+    </div>
+
+    <div class="acc">
+
+      <article class="acc-item" id="v01">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-v01">
+          <div class="acc-meta">
+            <span class="acc-num">Vetor 01 · 1994</span>
+            <span class="acc-aud">Plano Real</span>
+          </div>
+          <h3 class="acc-title">Como o Plano Real abriu caminho pro cartão</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-v01">
+          <div class="acc-body-inner">
+            <p>Antes de 1994, o Brasil viveu inflação que chegou a 80% ao mês em março de 1990. Nesse ambiente, três coisas eram impossíveis: <strong>calcular juro nominal em prazo longo</strong>, indexar contratos de forma estável e planejar fluxos parcelados em moeda nominal.</p>
+            <p>O carnê funcionava porque o varejo <strong>reindexava informalmente</strong> — correção embutida no preço, reajuste acordado verbalmente, desconto pra quem pagava à vista. O cartão de crédito, que existia no Brasil desde 1956, ficava restrito a alta renda porque dependia exatamente do que não existia: previsibilidade nominal.</p>
+            <p>Com o Real, o número de cartões dobrou entre 1999 e a década seguinte, crescendo entre 14% e 26% ao ano. A correlação não é coincidência — é causal.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="v02">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-v02">
+          <div class="acc-meta">
+            <span class="acc-num">Vetor 02 · 2003–2010</span>
+            <span class="acc-aud">Bancarização</span>
+          </div>
+          <h3 class="acc-title">Como a bancarização da classe C/D mudou quem podia parcelar</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-v02">
+          <div class="acc-body-inner">
+            <p>Bolsa Família, Caixa Fácil, salário mínimo dobrando de R$ 240 (2003) pra R$ 510 (2010). Crédito a pessoa física saiu de <strong>7,3% pra 14,9% do PIB</strong>. Crédito ao consumidor total saiu de 24% pra 46% do PIB.</p>
+            <p>Pela primeira vez na história brasileira, parcela significativa da classe C/D — historicamente atendida só pelo crediário do varejo — passou a ter conta bancária e cartão. Os bancos criaram cartões de limite baixo, com aprovação simplificada, e <strong>passaram a oferecer dentro das próprias lojas</strong>. O cartão substituiu o carnê no mesmo balcão em que o carnê era oferecido — e, frequentemente, pelo mesmo atendente.</p>
+            <p>A substituição se materializou dentro da loja, não apesar dela.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="v03">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-v03">
+          <div class="acc-meta">
+            <span class="acc-num">Vetor 03 · 2009–2013</span>
+            <span class="acc-aud">Fim do duopólio</span>
+          </div>
+          <h3 class="acc-title">Como o fim do duopólio reorganizou o mercado de pagamentos</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-v03">
+          <div class="acc-body-inner">
+            <p>Em 2008, Visa e Mastercard concentravam 90,5% do mercado de crédito. Não havia interoperabilidade: pra aceitar as duas, lojista mantinha <strong>duas máquinas, dois aluguéis, dois contratos</strong>.</p>
+            <p>Em 2009, o CADE encerrou a exclusividade Redecard–Mastercard. Em junho de 2010, caiu também a Visanet–Visa. Em 2013, a <strong>Lei 12.865</strong> criou o marco regulatório do Sistema de Pagamentos Brasileiro e a categoria de Instituição de Pagamento. Foi essa lei que abriu caminho pra Stone, PagSeguro, Mercado Pago, Getnet.</p>
+            <p>Aceitação ficou mais barata, mais lojista passou a aceitar cartão, e o instrumento ganhou a base capilar que faltava pra substituir o carnê em escala.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="v04">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-v04">
+          <div class="acc-meta">
+            <span class="acc-num">Vetor 04 · 1998–2014</span>
+            <span class="acc-aud">POS por todo lado</span>
+          </div>
+          <h3 class="acc-title">Como a maquininha chegou em todo canto</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-v04">
+          <div class="acc-body-inner">
+            <p>Três coisas viabilizaram: <strong>queda do custo do hardware</strong> (subadquirentes começaram a vender o aparelho ao invés de alugar), <strong>chip EMV</strong> trouxe segurança que a tarja magnética não tinha, e <strong>telecomunicação evoluiu</strong> de linha fixa pra GPRS, 3G, 4G e finalmente terminais móveis acoplados a smartphone.</p>
+            <p>O resultado foi a universalização da aceitação. Pra cliente de classe C, o cartão deixou de ser instrumento útil só em loja selecionada — virou instrumento universal. <strong>Quem mantinha carnê próprio passou a competir com a familiaridade do cartão</strong> em qualquer estabelecimento.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="v05">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-v05">
+          <div class="acc-meta">
+            <span class="acc-num">Vetor 05 · invenção BR</span>
+            <span class="acc-aud">Parcelado sem juros</span>
+          </div>
+          <h3 class="acc-title">Por que o parcelado sem juros é uma invenção brasileira</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-v05">
+          <div class="acc-body-inner">
+            <p>O parcelado sem juros é <strong>invenção brasileira</strong>, sem paralelo equivalente em outros mercados financeiros relevantes. Foi essa modalidade, não o cartão em si, que atacou direto a proposta de valor do carnê.</p>
+            <p>Pro cliente, a forma percebida é igual à do carnê: parcela fixa, prazo definido, parcela cabe no orçamento. Pro varejo, a estrutura é totalmente diferente — <strong>o crédito tá no banco emissor</strong>, o dado de comportamento de pagamento se acumula no bureau do banco, a receita financeira da operação fica fora da rede.</p>
+            <p>Em 2024, parcelado sem juros respondeu por <strong>41,1% dos R$ 2,8 trilhões transacionados em cartão de crédito</strong>. É a modalidade que sustenta tanto o cartão bandeirado quanto o private label no varejo brasileiro de hoje.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOCO 02 — COMO O CLIENTE DECIDE ============ -->
+<section class="bloco" id="bloco-02" data-bloco="02">
+  <div class="wrap">
+    <button class="bloco-toggle" aria-expanded="false" aria-controls="bloco-02-body">
+      <div class="bloco-header">
+        <div class="bloco-eyebrow">
+          <span class="bloco-num">Bloco 02</span>
+          <div class="bloco-rule"></div>
+        </div>
+      <div class="bloco-meta-pills">
+        <span class="bloco-pill bloco-pill--cat"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9 V6 L6 3 L10 6 V9"/><path d="M4.5 9 V7 H7.5 V9"/></svg>Comportamento</span>
+        <span class="bloco-pill">3 tópicos</span>
+        <span class="bloco-pill"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="4.5"/><path d="M6 3.5 V6 L7.8 7.8"/></svg>~5 min</span>
+      </div>
+      <h2 class="bloco-title">Como o cliente brasileiro decide o que paga primeiro. <em>Mesmo cliente, instrumentos diferentes, comportamento diferente.</em></h2>
+      <p class="bloco-lede">Por que a inadimplência do cartão da loja fica entre 8% e 17% e a do rotativo bandeirado em 64,7%.</p>
+      </div>
+      <div class="bloco-chevron" aria-hidden="true"><span class="plus"></span></div>
+    </button>
+
+    <div class="bloco-body" id="bloco-02-body">
+    <div class="bloco-body-inner">
+    <div class="bloco-controls">
+      <button class="bloco-ctrl" data-action="expand" data-bloco="02">+ Abrir todos</button>
+      <button class="bloco-ctrl" data-action="collapse" data-bloco="02">− Fechar todos</button>
+    </div>
+
+    <div class="acc">
+
+      <article class="acc-item" id="c01">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-c01">
+          <div class="acc-meta">
+            <span class="acc-num">Comportamento 01</span>
+            <span class="acc-aud">Hierarquia de pagamento</span>
+          </div>
+          <h3 class="acc-title">A ordem em que o brasileiro paga as contas</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-c01">
+          <div class="acc-body-inner">
+            <p>Pesquisa do SPC Brasil com 609 negativados em todas as capitais identificou a ordem em que o brasileiro paga quando o dinheiro não dá pra tudo: <strong>internet (68%), água e luz (63%), telefone (56%), TV por assinatura (46%), cartão de crédito (41%)</strong>.</p>
+            <p>O cartão fica em quinta posição não por falta de dinheiro — por <strong>consequência percebida</strong>. Internet e luz cortam no dia seguinte. Cartão cobra em 15 dias. O brasileiro organiza o pagamento pela pergunta "o que acontece se eu não pagar", não pela taxa de juro.</p>
+            <p>Esse padrão tem três camadas: <strong>consequência imediata e visível</strong> (corta o serviço), <strong>consequência formalizada mas mediata</strong> (cartão, crediário, negativação no SPC) e <strong>consequência remota ou negociável</strong> (dívidas pequenas com comerciante de bairro, empréstimos sem garantia). É na terceira camada que mora a inadimplência crônica brasileira.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="c02">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-c02">
+          <div class="acc-meta">
+            <span class="acc-num">Comportamento 02</span>
+            <span class="acc-aud">Vínculo com o credor</span>
+          </div>
+          <h3 class="acc-title">Por que o cartão da loja vem antes do cartão do banco</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-c02">
+          <div class="acc-body-inner">
+            <p>Mesmo cliente, mesma renda, mesma cidade. O comportamento de pagamento muda porque o instrumento muda. Três dimensões explicam.</p>
+            <p><strong>Frequência de exposição à marca.</strong> O cliente entra na loja cinco vezes por ano e usa o cartão da loja nessas cinco visitas. Tem contato físico que o cliente do cartão do banco não tem com a agência.</p>
+            <p><strong>Personalização da cobrança.</strong> Inadimplente no cartão da loja recebe contato de uma central associada à marca que ele frequenta — não de uma instituição abstrata.</p>
+            <p><strong>Penalidade direta.</strong> Atrasar o cartão da loja faz perder acesso ao parcelamento exclusivo, ao limite usado pra comprar a roupa do mês. <strong>Perda concreta de algo que o cliente usa.</strong> Atrasar o cartão do banco mexe num score que é abstração pra ele.</p>
+            <div class="pull">"81% dos usuários de crediário estão com as parcelas em dia, contra 10% em atraso." — Pesquisa CNDL/SPC Brasil</div>
+            <p>Esses 81% incluem majoritariamente classes C, D e E — exatamente o mesmo perfil que registra inadimplência alta em outras modalidades. <strong>A diferença não é o cliente. É o instrumento e a relação de cobrança.</strong></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="c03">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-c03">
+          <div class="acc-meta">
+            <span class="acc-num">Comportamento 03</span>
+            <span class="acc-aud">Os números</span>
+          </div>
+          <h3 class="acc-title">Como esse comportamento aparece nos números de inadimplência</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-c03">
+          <div class="acc-body-inner">
+            <p>Inadimplência acima de 90 dias das principais financeiras de varejo brasileiras com cartão próprio, comparada com o rotativo do cartão bandeirado no mesmo período.</p>
+            <div class="inad-table" aria-label="Inadimplência acima de 90 dias comparada">
+              <div class="inad-row head">
+                <div>Operação</div>
+                <div style="text-align:right">Inadim. 90+</div>
+              </div>
+              <div class="inad-row">
+                <div class="inad-name">Casas Bahia · crediário<span class="sub">4T24</span></div>
+                <div class="inad-num">8,0%</div>
+              </div>
+              <div class="inad-row">
+                <div class="inad-name">Luizacred (Magalu + banco)<span class="sub">Dez/24, longo prazo</span></div>
+                <div class="inad-num">8,1%</div>
+              </div>
+              <div class="inad-row">
+                <div class="inad-name">Quero-Quero · VerdeCard<span class="sub">2024, queda de 0,5 p.p. a/a</span></div>
+                <div class="inad-num">10,9%</div>
+              </div>
+              <div class="inad-row">
+                <div class="inad-name">Banco Carrefour<span class="sub">3T24, queda de 1,3 p.p. a/a</span></div>
+                <div class="inad-num">12,2%</div>
+              </div>
+              <div class="inad-row">
+                <div class="inad-name">Renner · Realize CFI<span class="sub">4T24, queda de 5,3 p.p. a/a</span></div>
+                <div class="inad-num">14,2%</div>
+              </div>
+              <div class="inad-row">
+                <div class="inad-name">Riachuelo · Midway<span class="sub">2024, vs 23,0% em 2023</span></div>
+                <div class="inad-num">17,3%</div>
+              </div>
+              <div class="inad-row warn">
+                <div class="inad-name">Rotativo do cartão de banco<span class="sub">Dez/25, BACEN</span></div>
+                <div class="inad-num">64,7%</div>
+              </div>
+            </div>
+            <p class="inad-source">Fonte: releases de resultados das companhias e BACEN. Compilação Float Brasil.</p>
+            <p style="margin-top:18px">Três a oito vezes a diferença. Mesmo cliente. O instrumento muda o comportamento.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOCO 03 — OS CINCO CAMINHOS ============ -->
+<section class="bloco" id="bloco-03" data-bloco="03">
+  <div class="wrap">
+    <button class="bloco-toggle" aria-expanded="false" aria-controls="bloco-03-body">
+      <div class="bloco-header">
+        <div class="bloco-eyebrow">
+          <span class="bloco-num">Bloco 03</span>
+          <div class="bloco-rule"></div>
+        </div>
+      <div class="bloco-meta-pills">
+        <span class="bloco-pill bloco-pill--cat"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6 H10"/><path d="M2 3.5 H10"/><path d="M2 8.5 H10"/><circle cx="3.5" cy="3.5" r="0.6" fill="currentColor"/><circle cx="6" cy="6" r="0.6" fill="currentColor"/><circle cx="8.5" cy="8.5" r="0.6" fill="currentColor"/></svg>Modelos</span>
+        <span class="bloco-pill">5 tópicos</span>
+        <span class="bloco-pill"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="4.5"/><path d="M6 3.5 V6 L7.8 7.8"/></svg>~12 min</span>
+      </div>
+      <h2 class="bloco-title">Os cinco caminhos pra operar o cartão da rede. <em>Cada um com sua estrutura, suas exigências e seus exemplos brasileiros.</em></h2>
+      <p class="bloco-lede">As cinco arquiteturas, com sintomas, como funciona, exemplos brasileiros e takeaway de cada uma.</p>
+      </div>
+      <div class="bloco-chevron" aria-hidden="true"><span class="plus"></span></div>
+    </button>
+
+    <div class="bloco-body" id="bloco-03-body">
+    <div class="bloco-body-inner">
+    <div class="bloco-controls">
+      <button class="bloco-ctrl" data-action="expand" data-bloco="03">+ Abrir todos</button>
+      <button class="bloco-ctrl" data-action="collapse" data-bloco="03">− Fechar todos</button>
+    </div>
+
+    <div class="acc">
+
+      <!-- MODELO 01 -->
+      <article class="acc-item" id="m01">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-m01">
+          <div class="acc-meta">
+            <span class="acc-num">Caminho 01</span>
+            <span class="acc-aud">Co-branded com banco<br/>3 variantes de profundidade</span>
+          </div>
+          <h3 class="acc-title">Cartão co-branded: a rede empresta a marca, o banco opera o cartão</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-m01">
+          <div class="acc-body-inner">
+            <div class="acc-sintomas">
+              <span class="sym-label">Você pode estar nessa situação se</span>
+              <ul class="sym-list">
+                <li class="sym-item">O cartão da rede tem bandeira aberta e foi emitido por um banco parceiro</li>
+                <li class="sym-item">A análise de crédito, a cobrança e o risco ficam no banco</li>
+                <li class="sym-item">Você recebe comissão por transação e revenue share contratual</li>
+                <li class="sym-item">O dado de comportamento de pagamento do cliente fica no bureau do banco</li>
+              </ul>
+            </div>
+
+            <span class="acc-section-label">Como funciona — 3 variantes</span>
+            <p><strong>Variante A — parceria simples.</strong> Você é fornecedor de marca e de base. Ganha comissão sobre transações e participação na receita financeira da carteira. A receita pra rede fica numa fração de um dígito do volume transacionado. Tempo de mercado: 12 a 18 meses.</p>
+            <p><strong>Variante B — joint venture formal.</strong> A rede vira sócia do banco numa empresa criada só pra gerir o cartão. Participa do lucro na proporção da sociedade. Mantém influência sobre política de crédito e produto.</p>
+            <p><strong>Variante C — licença própria.</strong> A rede deixa de precisar do banco parceiro porque vira ela própria uma financeira regulada (SCD, SCFI ou banco controlado). Fica com 100% do resultado, com tudo o que isso implica em compliance e capital regulatório.</p>
+
+            <span class="acc-section-label">Quem opera assim no Brasil</span>
+            <div class="acc-examples">
+              <div class="acc-ex"><b>Variante A:</b> LATAM Pass Itaucard, Pão de Açúcar Mais — parceria de marca, receita do cartão fica no banco.</div>
+              <div class="acc-ex"><b>Variante B:</b> Luizacred (Magalu + banco parceiro, 50/50) — reverteu prejuízo de R$ 98 mi em 2023 para lucro de R$ 295 mi em 2024.</div>
+              <div class="acc-ex"><b>Variante C:</b> Banco Carrefour (6º maior emissor do país, R$ 29 bi de carteira), Realize CFI (Renner, R$ 6,5 bi), Midway (Riachuelo, ~29% do EBITDA do grupo), Magalupay SCFI.</div>
+            </div>
+
+            <span class="acc-out">Variante A é a porta de entrada quando a base do cliente é mista e usa o cartão também fora da rede. Variante C é a chegada — você é o banco do seu cliente.</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- MODELO 02 -->
+      <article class="acc-item" id="m02">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-m02">
+          <div class="acc-meta">
+            <span class="acc-num">Caminho 02</span>
+            <span class="acc-aud">Arranjo de pagamento fechado<br/>Cartão só na sua rede</span>
+          </div>
+          <h3 class="acc-title">Arranjo de pagamento fechado: a rede emite, cobra e fica com tudo dentro de casa</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-m02">
+          <div class="acc-body-inner">
+            <div class="acc-sintomas">
+              <span class="sym-label">Você pode estar nessa situação se</span>
+              <ul class="sym-list">
+                <li class="sym-item">A rede já tem ou quer ter um cartão private label puro, sem Visa/Mastercard</li>
+                <li class="sym-item">O cliente concentra muito do gasto dentro da rede e das conveniadas</li>
+                <li class="sym-item">A capilaridade regional sustenta a marca como destino de compra recorrente</li>
+                <li class="sym-item">Quer toda a receita do cartão (juros, tarifas, float) dentro do grupo</li>
+              </ul>
+            </div>
+
+            <span class="acc-section-label">Como funciona</span>
+            <p>Definido pela Resolução BCB 150/2021. Você (ou empresa do mesmo grupo) é, ao mesmo tempo, instituidora do arranjo, emissora do cartão e credenciadora dos estabelecimentos. <strong>Sem bandeira aberta. Sem tarifa de interchange.</strong> O cartão passa e o dinheiro liquida tudo dentro do próprio grupo.</p>
+            <p>Ponto regulatório que poucos varejistas conhecem: <strong>até R$ 20 bilhões transacionados e 100 milhões de transações em 12 meses, o arranjo fechado é dispensado de autorização do BACEN</strong>. Só precisa comunicar. Pra ter ideia da escala: a Casas Bahia, líder histórica do crediário, opera carteira de R$ 6,2 bilhões — uma ordem de grandeza abaixo do teto.</p>
+
+            <span class="acc-section-label">Quem opera assim no Brasil</span>
+            <div class="acc-examples">
+              <div class="acc-ex"><b>Pernambucanas:</b> cartão básico private label puro, anuidade zero, 6x sem juros, mais de 50 dias pra pagar. Mais de 9 milhões de cartões emitidos.</div>
+              <div class="acc-ex"><b>Cartão Renner original (1973):</b> primeiro cartão private label do Brasil, em arranjo fechado por décadas antes da evolução pra Realize CFI.</div>
+              <div class="acc-ex"><b>Casas Bahia · crediário:</b> R$ 6,2 bi em 2024, recorde histórico. 25,5% das vendas em loja física no 2T25.</div>
+            </div>
+
+            <span class="acc-out">Toda a receita financeira fica no grupo. Em troca, você precisa ter (ou construir) a equipe de análise de crédito, cobrança e funding pra carteira inteira.</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- MODELO 03 -->
+      <article class="acc-item" id="m03">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-m03">
+          <div class="acc-meta">
+            <span class="acc-num">Caminho 03</span>
+            <span class="acc-aud">Fintech especializada<br/>Cartão de loja como serviço</span>
+          </div>
+          <h3 class="acc-title">Fintech especializada: uma administradora dedicada ao varejo opera o crédito</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-m03">
+          <div class="acc-body-inner">
+            <div class="acc-sintomas">
+              <span class="sym-label">Você pode estar nessa situação se</span>
+              <ul class="sym-list">
+                <li class="sym-item">Sua base é classes C e D — frequentemente fora do score do banco grande</li>
+                <li class="sym-item">Você quer cartão da loja sem investir capital próprio pesado de início</li>
+                <li class="sym-item">Quer customização da jornada e da política de crédito pro seu cliente</li>
+                <li class="sym-item">Aceita receber comissão por cartão ativo e participação na receita, no lugar de ficar com toda a receita do parcelado</li>
+              </ul>
+            </div>
+
+            <span class="acc-section-label">Como funciona</span>
+            <p>A fintech administradora origina, emite, analisa risco e gere o relacionamento. <strong>Mas não carrega a carteira no próprio balanço.</strong> O funding vem de um FIDC (Fundo de Investimento em Direitos Creditórios) cujas cotas são distribuídas a investidores externos — gestoras, fundos. A carteira é deles. A operação é da fintech. A loja é parceira comercial.</p>
+            <p>O resultado é uma cadeia em três: a rede cede a operação, a fintech opera com infraestrutura especializada, investidores externos financiam. Customização da jornada e política de crédito calibrada pro cliente parcialmente bancarizado — exatamente onde banco grande tem dificuldade.</p>
+
+            <span class="acc-section-label">Quem opera assim no Brasil</span>
+            <div class="acc-examples">
+              <div class="acc-ex"><b>DM (líder do segmento):</b> mais de 17 milhões de cartões emitidos em 2025, atende centenas de redes — supermercados, atacarejo, construção civil, moda popular regional.</div>
+              <div class="acc-ex"><b>FortBrasil</b> (adquirida pela DM em 2023), <b>Credz</b> (família Zogbi, FIDC próprio de R$ 400 mi em 2022), <b>Trigg</b>, <b>UZE</b>.</div>
+              <div class="acc-ex"><b>Onde aparece muito:</b> supermercadistas regionais como Sonda, BH, Koch, Spani Atacadista. Em redes desse porte, é frequentemente o instrumento financeiro principal.</div>
+            </div>
+
+            <span class="acc-out">Resultado pra rede é maior que no co-branded com banco grande, porque a fintech opera margens mais altas no público C/D e divide melhor. A receita financeira continua fora — mas com customização que o banco grande não entrega.</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- MODELO 04 -->
+      <article class="acc-item" id="m04">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-m04">
+          <div class="acc-meta">
+            <span class="acc-num">Caminho 04</span>
+            <span class="acc-aud">Stack via software house<br/>Rede opera, parceiro entrega tecnologia</span>
+          </div>
+          <h3 class="acc-title">Stack via software house: a rede opera, parceiro entrega tecnologia e funding</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-m04">
+          <div class="acc-body-inner">
+            <div class="acc-sintomas">
+              <span class="sym-label">Você pode estar nessa situação se</span>
+              <ul class="sym-list">
+                <li class="sym-item">Quer ser o credor de fato e ficar com o resultado da carteira</li>
+                <li class="sym-item">Não tem time técnico pra construir app, motor de crédito e back-office</li>
+                <li class="sym-item">Não quer (ou ainda não tem volume pra) virar instituição financeira regulada</li>
+                <li class="sym-item">Quer flexibilidade pra rodar private label e bandeirado em paralelo</li>
+              </ul>
+            </div>
+
+            <span class="acc-section-label">Como funciona</span>
+            <p>A software house entrega <strong>a stack completa</strong> — app do cliente, internet banking, motor de crédito, antifraude, integração com bureaus, sistema de cobrança, módulo contábil. E, importante, monta o veículo de funding (FIDC ou Securitizadora) <strong>em nome da própria rede</strong>. A rede entra com a marca, a base, a política comercial e o capital. A software house entrega a infraestrutura como serviço.</p>
+            <p>Diferença essencial pro BIN Sponsor logo abaixo: aqui, <strong>a rede é a operadora completa</strong>. A software house é fornecedora de software e estruturação. Lá, o BIN Sponsor é fornecedor de licença e processamento, e a rede se acopla a ela.</p>
+
+            <span class="acc-section-label">O que muda no resultado pra rede</span>
+            <p>A receita fica com a rede, líquida da taxa paga à software house (fee de implementação, mensalidade, taxa por cartão ativo, taxa por transação). Como o FIDC ou Securitizadora é da rede, <strong>a carteira aparece como ativo do grupo</strong> — lastro pra captação adicional, instrumento de gestão de capital de giro. Eficiência tributária diferente: a receita financeira é tributada na estrutura do veículo, não no balanço operacional do varejo.</p>
+
+            <span class="acc-section-label">Onde esse modelo cresceu</span>
+            <div class="acc-examples">
+              <div class="acc-ex">Modelo que mais expandiu no varejo brasileiro de médio porte entre 2020 e 2026. Surgiu como resposta a uma lacuna: redes que queriam ficar com o resultado como Renner ou Riachuelo, mas sem ter time técnico, jurídico e volume pra licença própria.</div>
+              <div class="acc-ex">Players de infraestrutura tecnológica (white label, plataforma de Credit as a Service) preencheram exatamente essa lacuna.</div>
+            </div>
+
+            <span class="acc-out">Resultado próximo do que você teria com licença própria, sem o custo fixo de virar banco. Você paga taxa pra estrutura — a receita do parcelado, o dinheiro do float e o dado do cliente ficam com você.</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- MODELO 05 -->
+      <article class="acc-item" id="m05">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-m05">
+          <div class="acc-meta">
+            <span class="acc-num">Caminho 05</span>
+            <span class="acc-aud">BIN Sponsor · Banking as a Service<br/>Aluguel de licença</span>
+          </div>
+          <h3 class="acc-title">BIN Sponsor (Banking as a Service): a rede emite cartão bandeirado sob licença emprestada</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-m05">
+          <div class="acc-body-inner">
+            <div class="acc-sintomas">
+              <span class="sym-label">Você pode estar nessa situação se</span>
+              <ul class="sym-list">
+                <li class="sym-item">Quer cartão da marca, com Visa/Mastercard, que rode dentro e fora da rede</li>
+                <li class="sym-item">Não quer absorver o tempo (3 a 5 anos) e o capital de pedir licença ao BACEN</li>
+                <li class="sym-item">Quer flexibilidade contratual sobre quem financia e quem assume o risco</li>
+                <li class="sym-item">Quer chegar ao mercado em 3 a 6 meses, não em 18+</li>
+              </ul>
+            </div>
+
+            <span class="acc-section-label">Como funciona</span>
+            <p>BIN é a sigla de <em>Bank Identification Number</em> — os seis primeiros dígitos do cartão, que identificam quem é o emissor autorizado junto à bandeira. Quem não é autorizado pelo BACEN não pode ter BIN próprio. O <strong>BIN Sponsor</strong> é uma Instituição de Pagamento, SCD ou SCFI já autorizada que "empresta" a licença e a infraestrutura. A rede emite cartões sob sua marca, define produto, opera o relacionamento com o cliente, e fica com a maior parte da receita.</p>
+            <p>Diferença essencial pro co-branded: no co-branded, o banco é o protagonista financeiro e a rede é parceira de marca. <strong>No BIN Sponsor, a rede é o protagonista — do produto, do crédito, do dado.</strong> O parceiro é fornecedor de infraestrutura e licença.</p>
+
+            <span class="acc-section-label">As três variações que mudam o resultado</span>
+            <p><strong>1. Funding.</strong> A rede aporta capital pra carteira (e fica com toda a receita), ou usa o capital do parceiro (e divide).<br/>
+            <strong>2. Risco de crédito.</strong> Risco da rede (inadimplência impacta direto, mas a receita do parcelado fica toda lá), ou risco do parceiro (taxa maior, mas PDD garantida).<br/>
+            <strong>3. Saída.</strong> Em alguns contratos, a rede pode, depois de atingir volume, habilitar-se como emissora direta junto à bandeira e migrar pra BIN próprio — completando a trajetória.</p>
+
+            <span class="acc-section-label">O caso mais documentado no Brasil recente</span>
+            <div class="acc-examples">
+              <div class="acc-ex"><b>C&A Pay:</b> lançado em dez/2021 depois da C&A recomprar a operação histórica conduzida em parceria com banco. Chegou a 27,5% do faturamento no 4T24. Em 2025, quitou R$ 650,6 milhões da recompra. PDD caiu 12,6%, alavancagem caiu de 1,5x para 0,5x em 12 meses.</div>
+              <div class="acc-ex"><b>Infraestrutura:</b> Dock, Adiq, Pomelo, Celcoin, Swap, Evertec — players consolidados no Brasil entre 2018 e 2026.</div>
+            </div>
+
+            <span class="acc-out">Caminho mais rápido entre os que deixam o resultado da carteira dentro da rede (3 a 6 meses pro mercado). Quanto fica com você depende de como o contrato é desenhado em funding e risco.</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOCO 04 — QUEM JÁ FEZ NO BRASIL ============ -->
+<section class="bloco" id="bloco-04" data-bloco="04">
+  <div class="wrap">
+    <button class="bloco-toggle" aria-expanded="false" aria-controls="bloco-04-body">
+      <div class="bloco-header">
+        <div class="bloco-eyebrow">
+          <span class="bloco-num">Bloco 04</span>
+          <div class="bloco-rule"></div>
+        </div>
+      <div class="bloco-meta-pills">
+        <span class="bloco-pill bloco-pill--cat"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3" width="9" height="6.5" rx="0.5"/><path d="M4 3 V2 H8 V3"/><path d="M3.5 5.5 H8.5"/><path d="M3.5 7.5 H6.5"/></svg>Casos</span>
+        <span class="bloco-pill">9 redes</span>
+        <span class="bloco-pill"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="4.5"/><path d="M6 3.5 V6 L7.8 7.8"/></svg>~10 min</span>
+      </div>
+      <h2 class="bloco-title">Quem já trilhou cada caminho no Brasil. <em>Casos brasileiros documentados, com os números públicos das companhias.</em></h2>
+      <p class="bloco-lede">Nove redes brasileiras com os números públicos — incluindo um caso negativo, pra mostrar o que dá errado.</p>
+      </div>
+      <div class="bloco-chevron" aria-hidden="true"><span class="plus"></span></div>
+    </button>
+
+    <div class="bloco-body" id="bloco-04-body">
+    <div class="bloco-body-inner">
+    <div class="bloco-controls">
+      <button class="bloco-ctrl" data-action="expand" data-bloco="04">+ Abrir todos</button>
+      <button class="bloco-ctrl" data-action="collapse" data-bloco="04">− Fechar todos</button>
+    </div>
+
+    <div class="acc">
+
+      <article class="acc-item" id="ca01">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-ca01">
+          <div class="acc-meta">
+            <span class="acc-num">Caso 01</span>
+            <span class="acc-aud">Vestuário · Licença própria</span>
+          </div>
+          <h3 class="acc-title">Riachuelo · Midway</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-ca01">
+          <div class="acc-body-inner">
+            <p>EBITDA da Midway <strong>dobrou em 2024</strong> (R$ 404 mi). Em 2025, chegou a R$ 482 mi. Carteira saiu de R$ 5,7 bi (2024) pra R$ 6,2 bi (2025). Inadimplência 90+ caiu de 23,0% pra 17,3% em um ano.</p>
+            <p>Em out/2025, lançou crédito consignado — saindo do produto cativo pra competir num mercado aberto de R$ 700 bi, usando como vantagem a base de 15+ milhões de compradores ativos.</p>
+            <p>O Grupo Guararapes fechou 2024 com lucro de R$ 235 mi (reversão do prejuízo de 2023) e alavancagem de 0,3x EBITDA. <strong>A financeira blinda o resultado consolidado contra ciclos do varejo de vestuário.</strong></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="ca02">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-ca02">
+          <div class="acc-meta">
+            <span class="acc-num">Caso 02</span>
+            <span class="acc-aud">Vestuário · Licença própria</span>
+          </div>
+          <h3 class="acc-title">Renner · Realize CFI</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-ca02">
+          <div class="acc-body-inner">
+            <p>Cartão Renner original (1973) é um dos primeiros private label do Brasil. <strong>Formalizado como instituição financeira em 2017.</strong> Hoje administra dois produtos: Cartão Renner (private label, ecossistema do grupo) e Meu Cartão (co-branded Visa/Master, uso aberto).</p>
+            <p>Carteira saiu de R$ 3,4 bi em dez/2019 pra R$ 6,5 bi no 1S25 — quase o dobro em cinco anos. Capta via CDB, Letras Financeiras e CDI.</p>
+            <p>Em 2021, ampliou pra crédito a fornecedores estratégicos da Renner — operação típica de banco transacional. <strong>Deixou de ser uma vertical de cartão e passou a operar como instituição financeira corporativa interna ao grupo.</strong></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="ca03">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-ca03">
+          <div class="acc-meta">
+            <span class="acc-num">Caso 03</span>
+            <span class="acc-aud">Vestuário · BIN Sponsor</span>
+          </div>
+          <h3 class="acc-title">C&A · C&A Pay</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-ca03">
+          <div class="acc-body-inner">
+            <p>Lançado em dez/2021 depois da C&A recomprar a operação financeira que era conduzida em parceria com banco grande desde 2009. Chegou a <strong>25% do faturamento em jun/2024</strong>; 27,5% no 4T24. Em jun/2025, quitou R$ 650,6 mi da recompra dos direitos.</p>
+            <p>Custou caro na transição: em 2022, despesas gerais dobraram, EBITDA caiu 19,9% no 1T. Provisões altas entre 2022 e 2024.</p>
+            <p>Em 2025: <strong>PDD caiu 12,6% no 4T24, alavancagem caiu de 1,5x pra 0,5x em 12 meses</strong>. O ciclo se inverteu — operação própria gerou margem e reduziu dependência do parceiro.</p>
+            <p><em>Lição do caso: o custo de transição é alto. O retorno é estrutural.</em></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="ca04">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-ca04">
+          <div class="acc-meta">
+            <span class="acc-num">Caso 04</span>
+            <span class="acc-aud">Atacarejo · Banco controlado</span>
+          </div>
+          <h3 class="acc-title">Carrefour · Banco Carrefour</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-ca04">
+          <div class="acc-body-inner">
+            <p>Atende 6+ milhões de clientes ativos nas três bandeiras (Carrefour, Atacadão, Sam's Club). Faturamento consolidado de R$ 17,8 bi no 1T25 (+12,1% a/a). Carteira de R$ 29 bi (+16,2%).</p>
+            <p>Em 2025, <strong>33% das novas aquisições já acontecem fora da loja</strong>. A maior parte do faturamento do banco já não vem de dentro das lojas — virou banco transacional. Cartão Sam's Club cresceu 50,4% no 1T25.</p>
+            <p>Por ser <strong>instituição financeira com licença bancária plena</strong>, capta depósitos, oferece Pix Crédito, empréstimo pessoal — flexibilidade que SCFI e CFI não têm.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="ca05">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-ca05">
+          <div class="acc-meta">
+            <span class="acc-num">Caso 05</span>
+            <span class="acc-aud">Magazine · JV + SCFI próprio</span>
+          </div>
+          <h3 class="acc-title">Magazine Luiza · Luizacred + Magalupay</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-ca05">
+          <div class="acc-body-inner">
+            <p><strong>Luizacred</strong> é JV 50/50 com banco grande. Reverteu prejuízo de R$ 98 mi (2023) pra lucro de R$ 295 mi em 2024, ROE de 31% no 4T. Carteira de R$ 20,3 bi, 6,2 mi cartões ativos. Aporte conjunto de R$ 1 bi em mai/2024 pra retomar originação.</p>
+            <p>Em paralelo, em 2024 o BACEN aprovou a <strong>Magalupay SCFI</strong> — financeira 100% própria pra operações digitais, CDC digital, empréstimo a sellers, saldo remunerado.</p>
+            <p>Arquitetura mais sofisticada do estudo: <strong>mantém a parceria histórica pro produto cativo e opera 100% por dentro o crescimento marginal</strong>. Nem totalmente própria como C&A e Riachuelo, nem totalmente em parceria.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="ca06">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-ca06">
+          <div class="acc-meta">
+            <span class="acc-num">Caso 06</span>
+            <span class="acc-aud">Vestuário · Arranjo fechado</span>
+          </div>
+          <h3 class="acc-title">Pernambucanas · Pefisa</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-ca06">
+          <div class="acc-body-inner">
+            <p>Pefisa, financeira controlada pela rede, opera o cartão Pernambucanas em quatro modalidades (Básico, Flex, Elo Mais, Elo Grafite). Também oferece conta digital, saques emergenciais, recargas e investimentos com cobertura do FGC.</p>
+            <p>Detalhe relevante do desenho: o <strong>cartão básico é private label puro</strong> — sem bandeira aberta, anuidade zero, 6x sem juros, mais de 50 dias pra pagar compras de moda e casa.</p>
+            <p>Esse desenho é deliberado: <strong>elimina a opção de uso fora da loja</strong>, garantindo que cada compra alimenta o relacionamento direto. Funciona como cartão-cativo. É o modelo que os concorrentes que operam o cartão por dentro (Renner, C&A, Riachuelo) tentam reconstruir.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="ca07">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-ca07">
+          <div class="acc-meta">
+            <span class="acc-num">Caso 07</span>
+            <span class="acc-aud">Magazine · Arranjo fechado + digital</span>
+          </div>
+          <h3 class="acc-title">Casas Bahia · crediário + banQi</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-ca07">
+          <div class="acc-body-inner">
+            <p>A própria identidade da rede foi construída sobre o carnê desde 1952. A digitalização — crediário online + banco digital banQi — <strong>não substituiu o carnê físico, aumentou</strong>. Recorde de R$ 6,2 bi em 4T24, crescimento de R$ 824 mi a/a.</p>
+            <p>Crediário digital alcança <strong>4.600 municípios sem loja física</strong> — 94% das cidades do Brasil. Penetração de 17% nas vendas consolidadas em 2025, 25,5% nas lojas físicas no 2T25.</p>
+            <p>FIDC pra securitização da carteira entrou em operação em 2025 e <strong>desbloqueou crescimento sem onerar o balanço da holding</strong>. banQi registrou lucro pelo terceiro trimestre consecutivo em 2025.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="ca08">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-ca08">
+          <div class="acc-meta">
+            <span class="acc-num">Caso 08</span>
+            <span class="acc-aud">Regional · IP + FIDC brAAA</span>
+          </div>
+          <h3 class="acc-title">Lojas Quero-Quero · VerdeCard</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-ca08">
+          <div class="acc-body-inner">
+            <p>O caso mais didático pra rede regional. A 9ª série de cotas seniores do <strong>FIDC VerdeCard tem rating brAAA da S&P Global Ratings</strong> — o nível mais alto da escala nacional. Em termos práticos: <strong>o recebível do cartão de loja é tratado pelo mercado de capitais como ativo equivalente à debênture de empresa grau de investimento</strong>.</p>
+            <p>Receita de Serviços Financeiros: R$ 797,5 mi em 2024 (+16,8%). Volume transacionado no VerdeCard cresceu 18,8%, com aumento de uso em estabelecimentos conveniados (off-us). Inadimplência ficou em 10,9%, queda de 0,5 p.p. a/a.</p>
+            <p>Alavancagem da holding em 0,4x EBITDA — patamar baixo sustentado, em parte, pela captação via FIDC que não onera o balanço.</p>
+            <p><em>Mostra que a operação financeira própria, ancorada em FIDC, é viável fora do universo das grandes companhias listadas. Custo de capital comparável ao de empresas muito maiores, desde que a carteira tenha qualidade demonstrável.</em></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="ca09">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-ca09">
+          <div class="acc-meta">
+            <span class="acc-num">Caso 09</span>
+            <span class="acc-aud">Caso negativo · Aprendizado</span>
+          </div>
+          <h3 class="acc-title">Marisa · Mbank</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-ca09">
+          <div class="acc-body-inner">
+            <p>Lançou o Mbank em 2021 com 2 milhões de clientes. Foi atingida pela crise de inadimplência do varejo a partir de 2022, em momento em que a operação ainda estava em fase de estruturação. Resultado: prejuízo recorrente e reestruturação em 2023.</p>
+            <p>Separou em duas estruturas (MPagamentos e MCartões), reduziu taxa de aprovação do empréstimo pessoal em um terço, cortou emissão de cartões nas lojas em 50%.</p>
+            <p><strong>A diferença entre Marisa e C&A no mesmo período não foi a marca — foi capital pra atravessar o vale da curva de aprendizado.</strong> Lançar cartão próprio em ambiente de juros altos e pressão de margem do varejo, sem capital pra absorver as perdas iniciais e sem capacidade de refinar critério de originação na velocidade necessária, expõe a operação ao mesmo padrão de inadimplência de qualquer emissor.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOCO 05 — O QUE OLHAR ANTES ============ -->
+<section class="bloco" id="bloco-05" data-bloco="05">
+  <div class="wrap">
+    <button class="bloco-toggle" aria-expanded="false" aria-controls="bloco-05-body">
+      <div class="bloco-header">
+        <div class="bloco-eyebrow">
+          <span class="bloco-num">Bloco 05</span>
+          <div class="bloco-rule"></div>
+        </div>
+      <div class="bloco-meta-pills">
+        <span class="bloco-pill bloco-pill--cat"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="4.5"/><path d="M4.5 5 Q4.5 3.5 6 3.5 Q7.5 3.5 7.5 5 Q7.5 6 6 6.5 V7.5"/><circle cx="6" cy="9" r="0.5" fill="currentColor"/></svg>Perguntas</span>
+        <span class="bloco-pill">5 tópicos</span>
+        <span class="bloco-pill"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="4.5"/><path d="M6 3.5 V6 L7.8 7.8"/></svg>~5 min</span>
+      </div>
+      <h2 class="bloco-title">As cinco perguntas que valem a pena antes de escolher. <em>Mudam os pesos, mudam as respostas — mas as perguntas são as mesmas.</em></h2>
+      <p class="bloco-lede">As cinco perguntas que sustentam qualquer decisão sobre cartão da rede, independente do caminho.</p>
+      </div>
+      <div class="bloco-chevron" aria-hidden="true"><span class="plus"></span></div>
+    </button>
+
+    <div class="bloco-body" id="bloco-05-body">
+    <div class="bloco-body-inner">
+    <div class="bloco-controls">
+      <button class="bloco-ctrl" data-action="expand" data-bloco="05">+ Abrir todos</button>
+      <button class="bloco-ctrl" data-action="collapse" data-bloco="05">− Fechar todos</button>
+    </div>
+
+    <div class="acc">
+
+      <article class="acc-item" id="t01">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-t01">
+          <div class="acc-meta">
+            <span class="acc-num">Pergunta 01</span>
+            <span class="acc-aud">Saúde da carteira</span>
+          </div>
+          <h3 class="acc-title">Quem paga em dia, quem atrasa, quem nunca pagaria?</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-t01">
+          <div class="acc-body-inner">
+            <p>Toda base de clientes tem uma distribuição heterogênea de perfis. Há clientes que pagam em dia, há clientes que pagam com atraso mas liquidam, há clientes que entram em inadimplência sob pressão, há clientes que nunca deveriam ter recebido crédito. <strong>Saber o tamanho de cada faixa é a base de qualquer decisão posterior.</strong></p>
+            <p>O varejista com relacionamento duradouro com sua base conhece, de forma intuitiva, o comportamento financeiro dos clientes de uma forma que nenhum bureau formal consegue replicar. Estruturar esse conhecimento em dado é o ponto de partida.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="t02">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-t02">
+          <div class="acc-meta">
+            <span class="acc-num">Pergunta 02</span>
+            <span class="acc-aud">Modelagem do retorno</span>
+          </div>
+          <h3 class="acc-title">Quanto capital fica preso, quanto volta, em quanto tempo?</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-t02">
+          <div class="acc-body-inner">
+            <p>Modelagem padrão: <strong>volume mensal de vendas parceladas × número médio de parcelas / 2 = carteira média</strong>. Capital de giro ajusta isso pelo prazo de pagamento a fornecedores. Receita anual é volume × margem recuperada (MDR + antecipação + juros embutidos − inadimplência esperada). Payback é capital ÷ NOPAT.</p>
+            <p>O ROIC dessa operação supera consistentemente o WACC típico do varejo brasileiro (12% a 18%). Em cenário ilustrativo, ROIC de 21% sobre carteira de R$ 17 milhões. Mas <strong>o número depende da realidade específica de cada rede</strong> — ticket médio, número de parcelas, perfil da base, estrutura tributária.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="t03">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-t03">
+          <div class="acc-meta">
+            <span class="acc-num">Pergunta 03</span>
+            <span class="acc-aud">Desenho do produto no balcão</span>
+          </div>
+          <h3 class="acc-title">Limite, parcela, jornada de aprovação</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-t03">
+          <div class="acc-body-inner">
+            <p>O cliente que toma decisão de comprar com cartão da loja precisa saber, <strong>antes de finalizar a transação</strong>, exatamente quanto vai pagar por mês durante quantos meses. Essa visibilidade prévia é o que permite o cálculo cognitivo de adequação ao orçamento mensal.</p>
+            <p>Sem isso, o cartão da loja se aproxima do cartão do banco — fatura acumulada, surpresa, inadimplência involuntária. A diferença entre a inadimplência de 8% e a inadimplência de 60% começa aqui.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="t04">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-t04">
+          <div class="acc-meta">
+            <span class="acc-num">Pergunta 04</span>
+            <span class="acc-aud">Cobrança que mantém o cliente</span>
+          </div>
+          <h3 class="acc-title">WhatsApp, app, escalonamento</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-t04">
+          <div class="acc-body-inner">
+            <p>A camada ideal de cobrança combina <strong>contato próximo</strong> (WhatsApp identificando o cliente pelo nome, oferta imediata de negociação no app) com <strong>escalonamento progressivo</strong> até a negativação formal. Pesquisa CNDL/SPC: WhatsApp lidera com 41% na cobrança e 25% na negociação.</p>
+            <p>Contato anônimo, terceirizado, com tom impessoal descaracteriza o vínculo e iguala o cartão da loja ao cartão do banco no comportamento de pagamento.</p>
+            <p><strong>Operações maduras (Renner, Riachuelo, C&A) preservam a linguagem e o visual da marca em todos os pontos de contato — não só no cartão, mas no app, na fatura, no WhatsApp de cobrança.</strong></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="acc-item" id="t05">
+        <button class="acc-head" aria-expanded="false" aria-controls="b-t05">
+          <div class="acc-meta">
+            <span class="acc-num">Pergunta 05</span>
+            <span class="acc-aud">Estrutura de funding</span>
+          </div>
+          <h3 class="acc-title">De onde sai o dinheiro que financia a carteira</h3>
+          <div class="acc-chevron" aria-hidden="true"><span class="plus"></span></div>
+        </button>
+        <div class="acc-body" id="b-t05">
+          <div class="acc-body-inner">
+            <p>Quatro opções principais. <strong>Caixa próprio:</strong> mais simples, mas onera o balanço da holding. <strong>CDCI com parceiro bancário:</strong> Casas Bahia operou assim antes do FIDC. <strong>FIDC com cotas distribuídas:</strong> caso Quero-Quero, com rating brAAA, custo de captação de empresa grande. <strong>Securitizadora dedicada:</strong> alternativa estrutural ao FIDC, frequentemente usada no modelo de software house.</p>
+            <p>A securitização da carteira deixou de ser instrumento de capital de giro emergencial e <strong>passou a ser infraestrutura permanente de funding</strong>. O GPA passou a divulgar a dívida líquida em duas óticas — com e sem os recebíveis não antecipados —, sinalizando que o recebível de cartão é tratado, na prática, como equivalente a caixa.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSE ============ -->
+<section class="close" id="contato">
+  <div class="wrap">
+    <div class="bloco-header">
+      <div class="bloco-eyebrow">
+        <span class="bloco-num">Falar com a Float</span>
+        <div class="bloco-rule"></div>
+      </div>
+      <h2 class="bloco-title">Quer entender mais a fundo? <em>Marca uma conversa pra conhecer as metodologias que a Float usa em análise de carteira e desenvolvimento de produto financeiro.</em></h2>
+    </div>
+
+    <div class="contact">
+      <div class="who">
+        A <b>Float Brasil</b> é um estúdio de produto financeiro. Trabalhamos de dentro com varejistas estabelecidos no desenho e na operação do cartão da rede — do diagnóstico da carteira ao desenho do produto e à estruturação do funding.
+      </div>
+      <a href="mailto:guilherme@floatbrasil.com">guilherme@floatbrasil.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bot">
+  <div class="wrap row">
+    <div class="legal">Float Brasil · Cartão de loja no varejo brasileiro · 2026</div>
+    <div class="legal"><a href="https://wa.me/5511974847778" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:guilherme@floatbrasil.com">guilherme@floatbrasil.com</a></div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    // Recompute the max-height of an open bloco-body after its inner content changes
+    function syncBlocoHeight(blocoBody){
+      if(!blocoBody) return;
+      var section = blocoBody.closest('section.bloco');
+      if(!section || section.dataset.open !== 'true') return;
+      // Set to 'none' to measure true height, then back to fixed value for transition
+      blocoBody.style.maxHeight = 'none';
+      var h = blocoBody.scrollHeight;
+      blocoBody.style.maxHeight = h + 'px';
+    }
+
+    // ===== Inner accordion (items inside a bloco) =====
+    function setAccOpen(item, open){
+      var head = item.querySelector('.acc-head');
+      var body = item.querySelector('.acc-body');
+      if(!head || !body) return;
+      head.setAttribute('aria-expanded', open ? 'true' : 'false');
+      item.dataset.open = open ? 'true' : 'false';
+      body.style.maxHeight = open ? body.scrollHeight + 'px' : '0';
+      // Propagate height change up to the parent bloco-body
+      var parentBlocoBody = item.closest('.bloco-body');
+      if(parentBlocoBody) {
+        // Wait one frame for the inner transition to start, then resize parent
+        requestAnimationFrame(function(){
+          syncBlocoHeight(parentBlocoBody);
+        });
+        // Also resize again after the inner transition ends
+        setTimeout(function(){ syncBlocoHeight(parentBlocoBody); }, 600);
+      }
+    }
+    document.querySelectorAll('.acc-head').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        var item = btn.closest('.acc-item');
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        setAccOpen(item, !open);
+      });
+    });
+
+    // ===== Bloco-level dropdown =====
+    function setBlocoOpen(section, open){
+      var toggle = section.querySelector('.bloco-toggle');
+      var body = section.querySelector('.bloco-body');
+      if(!toggle || !body) return;
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      section.dataset.open = open ? 'true' : 'false';
+      if(open){
+        body.style.maxHeight = body.scrollHeight + 'px';
+      } else {
+        // To animate from current height to 0, set current first then 0
+        body.style.maxHeight = body.scrollHeight + 'px';
+        requestAnimationFrame(function(){ body.style.maxHeight = '0'; });
+      }
+    }
+    document.querySelectorAll('.bloco-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var section = btn.closest('section.bloco');
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        setBlocoOpen(section, !open);
+      });
+    });
+
+    // ===== Bloco controls (Abrir todos / Fechar todos) =====
+    document.querySelectorAll('.bloco-ctrl').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        var action = btn.getAttribute('data-action');
+        var blocoNum = btn.getAttribute('data-bloco');
+        var section = document.querySelector('section.bloco[data-bloco="' + blocoNum + '"]');
+        if(!section) return;
+        section.querySelectorAll('.acc-item').forEach(function(item){
+          setAccOpen(item, action === 'expand');
+        });
+        // After all items toggle, sync parent bloco-body height
+        var blocoBody = section.querySelector('.bloco-body');
+        requestAnimationFrame(function(){ syncBlocoHeight(blocoBody); });
+        setTimeout(function(){ syncBlocoHeight(blocoBody); }, 600);
+      });
+    });
+
+    // ===== Resize recompute =====
+    var resizeTimer;
+    window.addEventListener('resize', function(){
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function(){
+        // Inner items first
+        document.querySelectorAll('.acc-item').forEach(function(item){
+          if(item.dataset.open === 'true'){
+            var body = item.querySelector('.acc-body');
+            body.style.maxHeight = 'none';
+            body.style.maxHeight = body.scrollHeight + 'px';
+          }
+        });
+        // Then outer blocos
+        document.querySelectorAll('section.bloco').forEach(function(section){
+          if(section.dataset.open === 'true'){
+            var body = section.querySelector('.bloco-body');
+            body.style.maxHeight = 'none';
+            body.style.maxHeight = body.scrollHeight + 'px';
+          }
+        });
+      }, 120);
+    });
+
+    // ===== Hash → open everything in path + scroll =====
+    function openFromHash(){
+      if(!location.hash) return;
+      var target = document.querySelector(location.hash);
+      if(!target) return;
+      // Bloco direct
+      if(target.tagName === 'SECTION' && target.classList.contains('bloco')){
+        setBlocoOpen(target, true);
+        return;
+      }
+      // Inner item — open parent bloco first, then the item
+      if(target.classList.contains('acc-item')){
+        var parentBloco = target.closest('section.bloco');
+        if(parentBloco) setBlocoOpen(parentBloco, true);
+        setAccOpen(target, true);
+        // Re-sync after both opened
+        setTimeout(function(){
+          var blocoBody = parentBloco && parentBloco.querySelector('.bloco-body');
+          syncBlocoHeight(blocoBody);
+        }, 50);
+      }
+    }
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+  })();
+</script>
+</body>
+</html>
